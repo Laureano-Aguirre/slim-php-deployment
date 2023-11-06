@@ -73,7 +73,7 @@ $app->post('[/]', function (Request $request, Response $response) {
                     $empleadoController = new empleadoController();
                     $result = $empleadoController->agregarEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['rol'], $fechaAlta);
                 }else{
-                    $result = ['message' => 'ERROR, accion invalida en alta pedidos empleados.'];
+                    $result = ['message' => 'ERROR, accion invalida en alta empleados index.'];
                 }
                 break;
             case 'AltaProductos':
@@ -85,10 +85,10 @@ $app->post('[/]', function (Request $request, Response $response) {
                 }
                 break;
             case 'AltaMesas':
-                if(isset($_POST['idCliente']) && isset($_POST['idPedido']) && isset($_POST['idMozo']) && isset($_POST['estado'])){
-                    $idEncuesta = isset($_POST['idEncuesta']) && !empty($_POST['idEncuesta']) ? $_POST['idEncuesta'] : null ;
+                if(isset($_POST['idCliente']) && isset($_POST['idPedido']) && isset($_POST['idMozo']) && isset($_POST['idEncuesta']) && isset($_POST['estado'])){
+                    //$idEncuesta = isset($_POST['idEncuesta']) && !empty($_POST['idEncuesta']) ? $_POST['idEncuesta'] : null ;
                     $mesasController = new mesaController();
-                    $result = $mesasController->agregarMesa($_POST['idCliente'], $_POST['idPedido'], $_POST['idMozo'], $idEncuesta, $_POST['estado']);
+                    $result = $mesasController->agregarMesa($_POST['idCliente'], $_POST['idPedido'], $_POST['idMozo'], $_POST['idEncuesta'], $_POST['estado']);
                 }else{
                     $result = ['message' => 'ERROR, accion invalida en alta mesas index.'];
                 }              
@@ -110,13 +110,10 @@ $app->post('[/]', function (Request $request, Response $response) {
         return $response->withHeader('Content-Type', 'application/json');
     }
     else{
-        $result = ['message' => 'Parametros incorrectos.'];
+        $result = ['message' => 'Parametros incorrectos en POST.'];
         $response->getBody()->write(json_encode($result));
         return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
     }
-    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023"));
-    $response->getBody()->write($payload);
-    return $response->withHeader('Content-Type', 'application/json');
 });
 
 $app->run();

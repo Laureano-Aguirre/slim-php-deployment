@@ -24,7 +24,7 @@ class Mesa{
 
     public static function listarMesa(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_cliente as idCliente, id_pedido as idPedido, id_mozo as idMozo, id_encuesta as idEncuesta, estado FROM  mesas");
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_mesa as idMesa, id_cliente as idCliente, id_pedido as idPedido, id_mozo as idMozo, id_encuesta as idEncuesta, estado FROM  mesas");
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "mesa");
     }

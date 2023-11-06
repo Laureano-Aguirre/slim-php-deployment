@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "96af2751-422b-45ce-bbba-7d1628a9e562",
+		"name": "TP-Progra3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29393896"
+	},
+	"item": [
+		{
+			"name": "Sprints 1",
+			"item": [
+				{
+					"name": "GET-ListarEmpleados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:666/app/?action=ListarEmpleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "ListarEmpleados"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ListarProductos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/app/?action=ListarProductos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "ListarProductos"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ListarMesas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/app?action=ListarMesas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "ListarMesas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ListarPedidos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AgregarEmpleados",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaEmpleados",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "pepe",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "cordoba",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "bartender",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AltaProductos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaProductos",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "bebida",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "pepsi",
+									"type": "text"
+								},
+								{
+									"key": "cantidad",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AltaMesas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaMesas",
+									"type": "text"
+								},
+								{
+									"key": "idCliente",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "idPedido",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "idMozo",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "idEncuesta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "cerrada",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AltaPedidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaPedidos",
+									"type": "text"
+								},
+								{
+									"key": "nombreCliente",
+									"value": "nicolas",
+									"type": "text"
+								},
+								{
+									"key": "idEmpleado",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productos",
+									"value": "coca, empanada",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "listo para servir",
+									"type": "text"
+								},
+								{
+									"key": "tiempoFinalizacion",
+									"value": "15",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

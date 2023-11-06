@@ -16,7 +16,7 @@ class pedidoController{
     }
 
     public function listarPedidos(){
-        return ProductoRestaurante::listarProductos();
+        return Pedido::listarPedidos();
     }
 
     

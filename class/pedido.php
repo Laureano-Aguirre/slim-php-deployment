@@ -12,7 +12,8 @@ class Pedido{
 
     public function agregarPedido(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into pedidos (nombre_cliente,id_empleado,estado,tiempo_finalizacion) values(:nombreCliente, :idEmpleado, :estado, :tiempoFinalizacion)");
+        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into pedidos (id_pedido,nombre_cliente,id_empleado,productos,estado,tiempo_finalizacion) values(:idPedido, :nombreCliente, :idEmpleado, :productos, :estado, :tiempoFinalizacion)");
+        $consulta->bindValue(':idPedido', $this->idPedido, PDO::PARAM_STR);
         $consulta->bindValue(':nombreCliente', $this->nombreCliente, PDO::PARAM_STR);
         $consulta->bindValue(':idEmpleado', $this->idEmpleado, PDO::PARAM_INT);
         $consulta->bindValue(':productos', $this->productos, PDO::PARAM_STR);
@@ -23,11 +24,11 @@ class Pedido{
 
     }
 
-    public static function listarMesa(){
+    public static function listarPedidos(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("SELECT nombre_cliente as nombreCliente, id_empleado as idEmpleado, estado, tiempo_finalizacion as tiempoFinalizacion FROM  pedidos");
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_pedido as idPedido ,nombre_cliente as nombreCliente, id_empleado as idEmpleado, productos, estado, tiempo_finalizacion as tiempoFinalizacion FROM  pedidos");
         $consulta->execute();
-        return $consulta->fetchAll(PDO::FETCH_CLASS, "mesa");
+        return $consulta->fetchAll(PDO::FETCH_CLASS, "pedido");
     }
 
     public static function generarIdAlfanumerico($length = 5) {

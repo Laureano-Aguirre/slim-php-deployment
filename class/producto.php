@@ -10,7 +10,7 @@ class ProductoRestaurante{
 
     public function agregarProducto(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into productos (tipo,descripcion) values(:tipo, :descripcion, :cantidad)");
+        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into productos (tipo,descripcion,cantidad) values(:tipo, :descripcion, :cantidad)");
         $consulta->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);
         $consulta->bindValue(':descripcion', $this->descripcion, PDO::PARAM_STR);
         $consulta->bindValue(':cantidad', $this->cantidad, PDO::PARAM_INT);
@@ -22,7 +22,7 @@ class ProductoRestaurante{
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
         $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_producto as id, tipo, descripcion FROM  productos");
         $consulta->execute();
-        return $consulta->fetchAll(PDO::FETCH_CLASS, "producto");
+        return $consulta->fetchAll(PDO::FETCH_CLASS, "productoRestaurante");
     }
 }
 
