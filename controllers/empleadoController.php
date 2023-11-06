@@ -1,6 +1,6 @@
 <?php
 
-require_once './class/empleado.php';
+include_once '../class/empleado.php';
 
 class empleadoController{
 

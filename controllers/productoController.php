@@ -1,6 +1,6 @@
 <?php
 
-require_once './class/producto.php';
+include_once '../class/producto.php';
 
 class productoController{
 

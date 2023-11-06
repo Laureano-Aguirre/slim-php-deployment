@@ -1,6 +1,6 @@
 <?php
 
-require_once './class/mesa.php';
+include_once '../class/mesa.php';
 
 class mesaController{
 

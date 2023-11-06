@@ -1,6 +1,6 @@
 <?php
 
-require_once './class/pedido.php';
+require_once '../class/pedido.php';
 
 class pedidoController{
 

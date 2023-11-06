@@ -1,6 +1,6 @@
 <?php
 
-include '../db/AccesoDatos.php';
+include_once '../db/AccesoDatos.php';
 
 class Empleado{
     public $id;
