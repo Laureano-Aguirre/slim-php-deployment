@@ -1,6 +1,6 @@
 <?php
 
-include './db/AccesoDatos.php';
+include '../db/AccesoDatos.php';
 
 class Pedido{
     public $idPedido;
@@ -28,6 +28,17 @@ class Pedido{
         $consulta = $objetoAccesoDato->retornarConsulta("SELECT nombre_cliente as nombreCliente, id_empleado as idEmpleado, estado, tiempo_finalizacion as tiempoFinalizacion FROM  pedidos");
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "mesa");
+    }
+
+    public static function generarIdAlfanumerico($length = 5) {
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $id = '';
+        
+        for ($i = 0; $i < $length; $i++) {
+            $id .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        
+        return $id;
     }
 }
 

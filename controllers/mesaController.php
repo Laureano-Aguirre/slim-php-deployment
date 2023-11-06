@@ -11,6 +11,7 @@ class mesaController{
         $mesa->idMozo = $idMozo;
         $mesa->idEncuesta = $idEncuesta;
         $mesa->estado = $estado;
+        return $mesa->agregarMesa();
     }
 
     public function listarMesas(){

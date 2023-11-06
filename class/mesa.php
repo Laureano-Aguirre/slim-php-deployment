@@ -1,6 +1,6 @@
 <?php
 
-include './db/AccesoDatos.php';
+include '../db/AccesoDatos.php';
 
 class Mesa{
     public $idMesa;
