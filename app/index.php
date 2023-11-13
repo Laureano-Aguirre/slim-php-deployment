@@ -11,7 +11,9 @@ use Slim\Routing\RouteCollectorProxy;
 use Slim\Routing\RouteContext;
 
 require __DIR__ . '/../vendor/autoload.php';
-require_once '../middlewares/Logger.php';
+include_once '../middlewares/LoggerPOST.php';
+include_once '../middlewares/LoggerGET.php';
+include_once '../middlewares/Authentication.php';
 
 // Instantiate App
 $app = AppFactory::create();
@@ -34,89 +36,36 @@ include_once '../controllers/mesaController.php';
 
 // Routes
 $app->get('[/]', function (Request $request, Response $response) {
-    if(isset($_GET['action'])){
-        switch($_GET['action']){
-            case 'ListarEmpleados':
-                $empleadoController = new empleadoController();
-                $result = $empleadoController->listarEmpleados();
-                break;
-            case 'ListarProductos':
-                $productosController = new productoController();
-                $result = $productosController->listarProductos();
-                break;
-            case 'ListarMesas':
-                $mesasController = new mesaController();
-                $result = $mesasController->listarMesas();
-                break;
-            case 'ListarPedidos':
-                $pedidosController = new pedidoController();
-                $result = $pedidosController->listarPedidos();
-                break;
-            default:
-                $result = ['message' => 'ERROR, accion invalida.'];
-                break;           
-        }
-        $response->getBody()->write(json_encode($result));
-        return $response->withHeader('Content-Type', 'application/json');
-    }
-    else{
-        $result = ['message' => 'Parametros incorrectos.'];
-        $response->getBody()->write(json_encode($result));
-        return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
-    }
-    
-});
+    $result = ['message' => 'Listando, aguarde...'];
+    $response->getBody()->write(json_encode($result)); 
+    return $response->withHeader('Content-Type', 'application/json');
+})->add(new LoggerMiddlewareGET());
 
 $app->post('[/]', function (Request $request, Response $response) {
-    if(isset($_POST['action'])){
-        switch($_POST['action']){
-            case 'AltaEmpleados':
-                if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['rol'])){
-                    $fechaAlta = date('Y-m-d');
-                    $empleadoController = new empleadoController();
-                    $result = $empleadoController->agregarEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['rol'], $fechaAlta);
-                }else{
-                    $result = ['message' => 'ERROR, accion invalida en alta empleados index.'];
-                }
-                break;
-            case 'AltaProductos':
-                if(isset($_POST['tipo']) && isset($_POST['descripcion']) && isset($_POST['cantidad'])){
-                    $productosController = new productoController();
-                    $result = $productosController->agregarProducto($_POST['tipo'], $_POST['descripcion'], $_POST['cantidad']);
-                }else{
-                    $result = ['message' => 'ERROR, accion invalida en alta productos index.'];
-                }
-                break;
-            case 'AltaMesas':
-                if(isset($_POST['idCliente']) && isset($_POST['idPedido']) && isset($_POST['idMozo']) && isset($_POST['idEncuesta']) && isset($_POST['estado'])){
-                    //$idEncuesta = isset($_POST['idEncuesta']) && !empty($_POST['idEncuesta']) ? $_POST['idEncuesta'] : null ;
-                    $mesasController = new mesaController();
-                    $result = $mesasController->agregarMesa($_POST['idCliente'], $_POST['idPedido'], $_POST['idMozo'], $_POST['idEncuesta'], $_POST['estado']);
-                }else{
-                    $result = ['message' => 'ERROR, accion invalida en alta mesas index.'];
-                }              
-                break;
-            case 'AltaPedidos':
-                if(isset($_POST['nombreCliente']) && isset($_POST['idEmpleado']) && isset($_POST['productos']) && isset($_POST['estado']) && isset($_POST['tiempoFinalizacion'])){
-                    $pedidosController = new pedidoController();
-                    $result = $pedidosController->agregarPedido($_POST['nombreCliente'], $_POST['idEmpleado'], $_POST['productos'], $_POST['estado'], $_POST['tiempoFinalizacion']);
-                }
-                else{
-                    $result = ['message' => 'ERROR, accion invalida en alta pedidos index.'];
-                }
-                break;
-            default:
-                $result = ['message' => 'ERROR, accion invalida.'];
-                break;           
-        }
-        $response->getBody()->write(json_encode($result));
-        return $response->withHeader('Content-Type', 'application/json');
+    $action = $_POST['action'];
+    switch ($action){
+        case 'AltaEmpleado':
+            $result = ['message' => 'Exito al dar de alta al empleado!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'AltaProductos':
+            $result = ['message' => 'Exito al dar de alta al producto!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'AltaMesas':
+            $result = ['message' => 'Exito al dar de alta la mesa!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'AltaPedidos':
+            $result = ['message' => 'Exito al dar de alta el pedido!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        default:
+            $result = ['message' => 'Error, no se reconoce la accion ingresada...'];
+            $response->getBody()->write(json_encode($result));
+            break;
     }
-    else{
-        $result = ['message' => 'Parametros incorrectos en POST.'];
-        $response->getBody()->write(json_encode($result));
-        return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
-    }
-})->add(new LoggerMiddleware());
+    return $response->withHeader('Content-Type', 'application/json');
+})->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePOST());
 
 $app->run();
