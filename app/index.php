@@ -71,12 +71,27 @@ $app->post('[/]', function (Request $request, Response $response) {
 })->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePOST());
 
 $app->put('[/]', function (Request $request, Response $response) {
-    $result = ['message' => 'Exito al modificar el empleado!'];
-    $response->getBody()->write(json_encode($result));
+    $parametros = $request->getParsedBody();
+    $action = $parametros['action'];
+    switch ($action){
+        case 'ModificarEmpleado':
+            $result = ['message' => 'Exito al modificar el empleado!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'ModificarPedido':
+            $result = ['message' => 'Exito al modificar el pedido!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        default:
+            $result = ['message' => 'Error, no se reconoce la accion ingresada...'];
+            $response->getBody()->write(json_encode($result));
+            break;
+    }
+    
     return $response->withHeader('Content-Type', 'application/json');
 })->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePUT());
 
-$app->delete('[/]', function (Request $request, Response $response) {
+$app->delete('[/]', function (Request $request, Response $response) {    
     $result = ['message' => 'Exito al borrar el empleado!'];
     $response->getBody()->write(json_encode($result));
     return $response->withHeader('Content-Type', 'application/json');

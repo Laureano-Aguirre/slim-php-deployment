@@ -31,6 +31,16 @@ class Pedido{
         return $consulta->fetchAll(PDO::FETCH_CLASS, "pedido");
     }
 
+    public function modificarPedido(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("UPDATE pedidos SET productos=:productos, estado=:estado, tiempo_finalizacion=:tiempoFinalizacion WHERE id_pedido=:id");
+        $consulta->bindValue(':id', $this->idPedido, PDO::PARAM_STR);
+        $consulta->bindValue(':productos', $this->productos, PDO::PARAM_STR);
+        $consulta->bindValue(':estado', $this->estado, PDO::PARAM_STR);
+        $consulta->bindValue(':tiempoFinalizacion', $this->tiempoFinalizacion, PDO::PARAM_INT);
+        return $consulta->execute();
+    }
+
     public static function generarIdAlfanumerico($length = 5) {
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         $id = '';

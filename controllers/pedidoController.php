@@ -19,7 +19,14 @@ class pedidoController{
         return Pedido::listarPedidos();
     }
 
-    
+    public function modificarPedido($idPedido, $productos, $estado, $tiempoFinalizacion){
+        $pedido = new Pedido();
+        $pedido->idPedido = $idPedido;
+        $pedido->productos = $productos;
+        $pedido->estado = $estado;
+        $pedido->tiempoFinalizacion = $tiempoFinalizacion;
+        return $pedido->modificarPedido();
+    }
 }
 
 ?>
