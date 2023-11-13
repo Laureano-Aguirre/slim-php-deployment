@@ -96,7 +96,24 @@
 					"name": "GET-ListarPedidos",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/app?action=ListarPedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "ListarPedidos"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -119,22 +136,27 @@
 							"formdata": [
 								{
 									"key": "action",
-									"value": "AltaEmpleados",
+									"value": "AltaEmpleado",
 									"type": "text"
 								},
 								{
 									"key": "nombre",
-									"value": "pepe",
+									"value": "Alan",
 									"type": "text"
 								},
 								{
 									"key": "apellido",
-									"value": "cordoba",
+									"value": "Gomez",
 									"type": "text"
 								},
 								{
 									"key": "rol",
-									"value": "bartender",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -169,17 +191,22 @@
 								},
 								{
 									"key": "tipo",
-									"value": "bebida",
+									"value": "comida",
 									"type": "text"
 								},
 								{
 									"key": "descripcion",
-									"value": "pepsi",
+									"value": "carne",
 									"type": "text"
 								},
 								{
 									"key": "cantidad",
 									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -213,12 +240,12 @@
 								},
 								{
 									"key": "idCliente",
-									"value": "1",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "idPedido",
-									"value": "1",
+									"value": "4",
 									"type": "text"
 								},
 								{
@@ -228,12 +255,17 @@
 								},
 								{
 									"key": "idEncuesta",
-									"value": "1",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "estado",
-									"value": "cerrada",
+									"value": "con cliente comiendo",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -267,7 +299,7 @@
 								},
 								{
 									"key": "nombreCliente",
-									"value": "nicolas",
+									"value": "Pepe",
 									"type": "text"
 								},
 								{
@@ -277,7 +309,7 @@
 								},
 								{
 									"key": "productos",
-									"value": "coca, empanada",
+									"value": "2 empanadas de carne y un vino",
 									"type": "text"
 								},
 								{
@@ -287,7 +319,12 @@
 								},
 								{
 									"key": "tiempoFinalizacion",
-									"value": "15",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -301,6 +338,252 @@
 							"port": "666",
 							"path": [
 								"app"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sprint 2",
+			"item": [
+				{
+					"name": "PUT-ModificarEmpleado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "ModificarUsuario",
+									"type": "text"
+								},
+								{
+									"key": "idEmpleado",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Alan",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Gomez",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "bartender",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ListarEmpleados Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:666/app/?action=ListarEmpleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "ListarEmpleados"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AgregarEmpleados Copy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaEmpleado",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Alan",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Gomez",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "cocinero",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-BorrarEmpleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "BorrarEmpleado",
+									"type": "text"
+								},
+								{
+									"key": "idEmpleado",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-ModificarPedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "ModificarPedido",
+									"type": "text"
+								},
+								{
+									"key": "idPedido",
+									"value": "DhaaP",
+									"type": "text"
+								},
+								{
+									"key": "productos",
+									"value": "coca, 2 empanadas",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "listo para servir",
+									"type": "text"
+								},
+								{
+									"key": "tiempoFinalizacion",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
 							]
 						}
 					},
