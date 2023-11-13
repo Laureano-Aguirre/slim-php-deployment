@@ -11,8 +11,10 @@ class Mesa{
     public $estado;
 
     public function agregarMesa(){
+        //echo$this->idMesa;
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
         $consulta = $objetoAccesoDato->retornarConsulta("INSERT into mesas (id_cliente,id_pedido,id_mozo,id_encuesta,estado) values(:idCliente, :idPedido, :idMozo, :idEncuesta, :estado)");
+        //$consulta->bindValue(':idMesa', $this->idMesa, PDO::PARAM_INT);
         $consulta->bindValue(':idCliente', $this->idCliente, PDO::PARAM_INT);
         $consulta->bindValue(':idPedido', $this->idPedido, PDO::PARAM_INT);
         $consulta->bindValue(':idMozo', $this->idMozo, PDO::PARAM_INT);
@@ -28,6 +30,11 @@ class Mesa{
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "mesa");
     }
+
+    /* public function retornarUltimoID(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        return $objetoAccesoDato->retornarUltimoId();
+    } */
 
 }
 

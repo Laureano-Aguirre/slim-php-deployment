@@ -14,6 +14,8 @@ require __DIR__ . '/../vendor/autoload.php';
 include_once '../middlewares/LoggerPOST.php';
 include_once '../middlewares/LoggerGET.php';
 include_once '../middlewares/Authentication.php';
+include_once '../middlewares/LoggerPUT.php';
+include_once '../middlewares/LoggerDELETE.php';
 
 // Instantiate App
 $app = AppFactory::create();
@@ -67,5 +69,17 @@ $app->post('[/]', function (Request $request, Response $response) {
     }
     return $response->withHeader('Content-Type', 'application/json');
 })->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePOST());
+
+$app->put('[/]', function (Request $request, Response $response) {
+    $result = ['message' => 'Exito al modificar el empleado!'];
+    $response->getBody()->write(json_encode($result));
+    return $response->withHeader('Content-Type', 'application/json');
+})->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePUT());
+
+$app->delete('[/]', function (Request $request, Response $response) {
+    $result = ['message' => 'Exito al borrar el empleado!'];
+    $response->getBody()->write(json_encode($result));
+    return $response->withHeader('Content-Type', 'application/json');
+})->add(new AuthenticationMiddleware())->add(new LoggerMiddlewareDelete());
 
 $app->run();

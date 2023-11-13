@@ -25,6 +25,24 @@ class Empleado{
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "empleado");
     }
+
+    public function modificarEmpleado(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("UPDATE empleados SET nombre=:nombre, apellido=:apellido, rol=:rol WHERE id_empleado=:id");
+
+        $consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $consulta->bindValue(':nombre', $this->nombre, PDO::PARAM_STR);
+        $consulta->bindValue(':apellido', $this->apellido, PDO::PARAM_STR);
+        $consulta->bindValue(':rol', $this->rol, PDO::PARAM_STR);
+        return $consulta->execute();
+    }
+
+    public function borrarEmpleado(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("DELETE from empleados WHERE id_empleado=:id");
+        $consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $consulta->execute();
+    }
 }
 
 

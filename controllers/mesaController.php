@@ -6,6 +6,8 @@ class mesaController{
 
     public function agregarMesa($idCliente, $idPedido, $idMozo, $idEncuesta, $estado){
         $mesa = new Mesa();
+        //$mesa->idMesa = $mesa->retornarUltimoID() + 1;
+        //$mesa->idMesa = 10000;
         $mesa->idCliente= $idCliente;
         $mesa->idPedido = $idPedido;
         $mesa->idMozo = $idMozo;
@@ -17,6 +19,8 @@ class mesaController{
     public function listarMesas(){
         return Mesa::listarMesa();
     }
+
+
 }
 
 

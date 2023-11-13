@@ -16,6 +16,21 @@ class empleadoController{
     public function listarEmpleados(){
         return Empleado::listarEmpleados();
     }
+
+    public function modificarEmpleado($idEmpleado, $nombre, $apellido, $rol){
+        $empleado = new Empleado();
+        $empleado->id = $idEmpleado;
+        $empleado->nombre = $nombre;
+        $empleado->apellido = $apellido;
+        $empleado->rol = $rol;
+        return $empleado->modificarEmpleado();
+    }
+
+    public function borrarEmpleado($idEmpleado){
+        $empleado = new Empleado();
+        $empleado->id = $idEmpleado;
+        return $empleado->borrarEmpleado();
+    }
 }
 
 
