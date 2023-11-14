@@ -20,6 +20,18 @@ class mesaController{
         return Mesa::listarMesa();
     }
 
+    public function modificarMesa($idMesa, $estado){
+        $mesa = new Mesa();
+        $mesa->idMesa = $idMesa;
+        $mesa->estado = $estado;
+        return $mesa->modificarMesa();
+    }
+
+    public function borrarMesa($idMesa){
+        $mesa = new Mesa();
+        $mesa->idMesa = $idMesa;
+        return $mesa->borrarMesa();
+    }
 
 }
 

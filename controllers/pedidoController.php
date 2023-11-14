@@ -27,6 +27,12 @@ class pedidoController{
         $pedido->tiempoFinalizacion = $tiempoFinalizacion;
         return $pedido->modificarPedido();
     }
+
+    public function borrarPedido($idPedido){
+        $pedido = new Pedido();
+        $pedido->idPedido = $idPedido;
+        return $pedido->borrarPedido();
+    }
 }
 
 ?>

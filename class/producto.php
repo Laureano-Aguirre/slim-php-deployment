@@ -24,6 +24,21 @@ class ProductoRestaurante{
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "productoRestaurante");
     }
+
+    public function modificarProducto(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("UPDATE productos SET cantidad=:cantidad WHERE id_producto=:idProducto");
+        $consulta->bindValue(':idProducto', $this->id, PDO::PARAM_INT);
+        $consulta->bindValue(':cantidad', $this->cantidad, PDO::PARAM_INT);
+        return $consulta->execute();
+    }
+
+    public function borrarProducto(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("DELETE from productos WHERE id_producto=:idProducto");
+        $consulta->bindValue(':idProducto', $this->id, PDO::PARAM_INT);
+        return $consulta->execute();
+    }
 }
 
 

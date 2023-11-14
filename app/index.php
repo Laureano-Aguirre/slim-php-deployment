@@ -78,6 +78,14 @@ $app->put('[/]', function (Request $request, Response $response) {
             $result = ['message' => 'Exito al modificar el empleado!'];
             $response->getBody()->write(json_encode($result));
             break;
+        case 'ModificarProducto':
+            $result = ['message' => 'Exito al modificar el producto!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'ModificarMesa':
+            $result = ['message' => 'Exito al modificar la mesa!'];
+            $response->getBody()->write(json_encode($result));
+            break;
         case 'ModificarPedido':
             $result = ['message' => 'Exito al modificar el pedido!'];
             $response->getBody()->write(json_encode($result));
@@ -92,8 +100,31 @@ $app->put('[/]', function (Request $request, Response $response) {
 })->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePUT());
 
 $app->delete('[/]', function (Request $request, Response $response) {    
-    $result = ['message' => 'Exito al borrar el empleado!'];
-    $response->getBody()->write(json_encode($result));
+    $parametros = $request->getParsedBody();
+    $action = $parametros['action'];
+    switch ($action){
+        case 'BorrarEmpleado':
+            $result = ['message' => 'Exito al borrar el empleado!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'BorrarProducto':
+            $result = ['message' => 'Exito al borrar el producto!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'BorrarMesa':
+            $result = ['message' => 'Exito al borrar la mesa!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'BorrarPedido':
+            $result = ['message' => 'Exito al borrar el pedido!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        default:
+            $result = ['message' => 'Error, no se reconoce la accion ingresada...'];
+            $response->getBody()->write(json_encode($result));
+            break;
+    }
+    
     return $response->withHeader('Content-Type', 'application/json');
 })->add(new AuthenticationMiddleware())->add(new LoggerMiddlewareDelete());
 

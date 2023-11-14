@@ -41,10 +41,32 @@ class LoggerMiddlewarePUT{
                     $response->getBody()->write(json_encode($result));
                 }
                 break;
+            case 'ModificarProducto':
+                if(Validaciones::validarInt($parametros['cantidad'])){
+                    $productoController = new productoController();
+                    $result = $productoController->modificarProducto($parametros['idProducto'], $parametros['cantidad']);
+                    $response = $handler->handle($request);
+                }else{
+                    $response = new Response();
+                    $result = ['message' => 'Algun parametro no fue introducido en un formato correcto.'];
+                    $response->getBody()->write(json_encode($result));
+                }
+                break;
+            case 'ModificarMesa':
+                if((Validaciones::validarInt($parametros['idMesa'])) && (Validaciones::validarStrings($parametros['estado']))){
+                    $mesaController = new mesaController();
+                    $result = $mesaController->modificarMesa($parametros['idMesa'], $parametros['estado']);
+                    $response = $handler->handle($request);
+                }else{
+                    $response = new Response();
+                    $result = ['message' => 'Algun parametro no fue introducido en un formato correcto.'];
+                    $response->getBody()->write(json_encode($result));
+                }
+                break;
             default:
                 
                 $response = new Response();
-                $result = ['message' => 'Accion desconocidaddd: ' . $action];
+                $result = ['message' => 'Accion desconocidad: ' . $action];
                 $response->getBody()->write(json_encode($result));
                 break;
         }

@@ -28,6 +28,39 @@ class LoggerMiddlewareDelete{
                     $response->getBody()->write(json_encode($result));
                 }
                 break;
+            case 'BorrarProducto':
+                if(Validaciones::validarInt($parametros['idProducto'])){
+                    $productoController = new productoController();
+                    $result = $productoController->borrarProducto($parametros['idProducto']);
+                    $response = $handler->handle($request);
+                }else{
+                    $response = new Response();
+                    $result = ['message' => 'Algun parametro no fue introducido en un formato correcto.'];
+                    $response->getBody()->write(json_encode($result));
+                }
+                break;
+            case 'BorrarMesa':
+                if(Validaciones::validarInt($parametros['idMesa'])){
+                    $mesaController = new mesaController();
+                    $result = $mesaController->borrarMesa($parametros['idMesa']);
+                    $response = $handler->handle($request);
+                }else{
+                    $response = new Response();
+                    $result = ['message' => 'Algun parametro no fue introducido en un formato correcto.'];
+                    $response->getBody()->write(json_encode($result));
+                }
+                break;
+            case 'BorrarPedido':
+                if(validaciones::validarStrings($parametros['idPedido'])){
+                    $pedido = new pedidoController();
+                    $pedido->borrarPedido($parametros['idPedido']);
+                    $response = $handler->handle($request);
+                }else{
+                    $response = new Response();
+                    $result = ['message' => 'Algun parametro no fue introducido en un formato correcto.'];
+                    $response->getBody()->write(json_encode($result));
+                }
+                break;
             default:
                 $response = new Response();
                 $result = ['message' => 'Accion desconocida: ' . $action];

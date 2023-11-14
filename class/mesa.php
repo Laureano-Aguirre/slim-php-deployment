@@ -31,6 +31,23 @@ class Mesa{
         return $consulta->fetchAll(PDO::FETCH_CLASS, "mesa");
     }
 
+    public function modificarMesa(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        //echo 'entreee';
+        $consulta = $objetoAccesoDato->retornarConsulta("UPDATE mesas SET estado=:estado WHERE id_mesa=:idMesa");
+        $consulta->bindValue(':idMesa', $this->idMesa, PDO::PARAM_INT);
+        $consulta->bindValue(':estado', $this->estado, PDO::PARAM_STR);
+        return $consulta->execute();
+    }
+
+    public function borrarMesa(){
+        //echo $this->idMesa;
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("DELETE from mesas WHERE id_mesa=:idMesa");
+        $consulta->bindValue(':idMesa', $this->idMesa, PDO::PARAM_INT);
+        return $consulta->execute();
+    }
+
     /* public function retornarUltimoID(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
         return $objetoAccesoDato->retornarUltimoId();

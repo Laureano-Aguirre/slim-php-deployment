@@ -41,6 +41,13 @@ class Pedido{
         return $consulta->execute();
     }
 
+    public function borrarPedido(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("DELETE from pedidos WHERE id_pedido=:idPedido");
+        $consulta->bindValue(':idPedido', $this->idPedido, PDO::PARAM_STR);
+        return $consulta->execute();
+    }
+
     public static function generarIdAlfanumerico($length = 5) {
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         $id = '';
