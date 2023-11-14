@@ -62,6 +62,21 @@ class LoggerMiddlewarePOST{
                     $response->getBody()->write(json_encode($result));
                 }
                 break;
+            case 'AltaEmpleadoCSV':
+                $empleadoController = new empleadoController();
+                $fechaAlta = date('Y-m-d');
+                if (($handle = fopen("../files/CargarDesdeArchivo.csv", "r")) !== FALSE) {
+                    if (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                        $result = $empleadoController->agregarEmpleado($data[0], $data[1], $data[2], $fechaAlta);
+                        $response = $handler->handle($request);
+                    }
+                    fclose($handle);
+                }else{
+                    $response = new Response();
+                    $result = ['message' => 'Error al leer el archivo.'];
+                    $response->getBody()->write(json_encode($result));
+                }
+                break;
             default:
                 $response = new Response();
                 $result = ['message' => 'Accion desconocida: ' . $action];

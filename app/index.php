@@ -62,6 +62,10 @@ $app->post('[/]', function (Request $request, Response $response) {
             $result = ['message' => 'Exito al dar de alta el pedido!'];
             $response->getBody()->write(json_encode($result));
             break;
+        case 'AltaEmpleadoCSV':
+            $result = ['message' => 'Exito al dar de alta al empleado a traves del archivo.csv!'];
+            $response->getBody()->write(json_encode($result));
+            break;
         default:
             $result = ['message' => 'Error, no se reconoce la accion ingresada...'];
             $response->getBody()->write(json_encode($result));

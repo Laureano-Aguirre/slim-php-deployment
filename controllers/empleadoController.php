@@ -31,6 +31,8 @@ class empleadoController{
         $empleado->id = $idEmpleado;
         return $empleado->borrarEmpleado();
     }
+
+    
 }
 
 

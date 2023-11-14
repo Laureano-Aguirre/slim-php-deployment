@@ -40,6 +40,18 @@ class LoggerMiddlewareGET{
                 $response->getBody()->write(json_encode($result));
                 //$response = $handler->handle($request);
             break;
+            case 'DescargarCSV':
+                $empleadoController = new empleadoController();
+                $result = $empleadoController->listarEmpleados();
+                if (($handle = fopen("../files/LeerDesdeArchivo.csv", "w")) !== FALSE) {
+                    foreach ($result as $empleado) {
+                        $row = array($empleado->nombre, $empleado->apellido, $empleado->rol);
+                        fputcsv($handle, $row);
+                    }
+                    $response = $handler->handle($request);
+                    fclose($handle);
+                }
+                break;
             default:
                 $response = new Response();
                 $result = ['message' => 'Accion desconocida: ' . $action];
