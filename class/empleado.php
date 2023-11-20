@@ -4,6 +4,8 @@ include_once '../db/AccesoDatos.php';
 
 class Empleado{
     public $id;
+    public $usuario;
+    public $password;
     public $nombre;
     public $apellido;
     public $rol;
@@ -11,7 +13,9 @@ class Empleado{
 
     public function agregarEmpleado(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into empleados (nombre,apellido,rol,fecha_Alta) values(:nombre, :apellido, :rol, '$this->fechaAlta')");
+        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into empleados (usuario,password,nombre,apellido,rol,fecha_Alta) values(:usuario, :password,:nombre, :apellido, :rol, '$this->fechaAlta')");
+        $consulta->bindValue(':usuario', $this->usuario, PDO::PARAM_STR);
+        $consulta->bindValue(':password', $this->password, PDO::PARAM_STR);
         $consulta->bindValue(':nombre', $this->nombre, PDO::PARAM_STR);
         $consulta->bindValue(':apellido', $this->apellido, PDO::PARAM_STR);
         $consulta->bindValue(':rol', $this->rol, PDO::PARAM_STR);
@@ -42,6 +46,15 @@ class Empleado{
         $consulta = $objetoAccesoDato->retornarConsulta("DELETE from empleados WHERE id_empleado=:id");
         $consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $consulta->execute();
+    }
+
+    public function autenticarEmpleado(){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT * FROM empleados WHERE usuario=:usuario AND password=:pass");
+        $consulta->bindValue(':usuario', $this->usuario, PDO::PARAM_STR);
+        $consulta->bindValue(':pass', $this->password, PDO::PARAM_STR);
+        $consulta->execute();
+        return $consulta->fetch() !== false;
     }
 }
 

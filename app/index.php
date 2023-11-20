@@ -16,6 +16,8 @@ include_once '../middlewares/LoggerGET.php';
 include_once '../middlewares/Authentication.php';
 include_once '../middlewares/LoggerPUT.php';
 include_once '../middlewares/LoggerDELETE.php';
+include_once '../middlewares/LoginMiddleware.php';
+include_once '../jwt/AutentificadorJWT.php';
 
 // Instantiate App
 $app = AppFactory::create();
@@ -33,6 +35,7 @@ include_once '../controllers/empleadoController.php';
 include_once '../controllers/productoController.php';
 include_once '../controllers/pedidoController.php';
 include_once '../controllers/mesaController.php';
+include_once '../controllers/AuthenticatorController.php';
 
 
 
@@ -73,6 +76,19 @@ $app->post('[/]', function (Request $request, Response $response) {
     }
     return $response->withHeader('Content-Type', 'application/json');
 })->add(new AuthenticationMiddleware())->add(new LoggerMiddlewarePOST());
+
+$app->group('/auth', function (RouteCollectorProxy $group) {
+    $group->post('[/login]', function (Request $request, Response $response) {
+        $parametros = $request->getParsedBody();
+        $datos = array('usuario' => $parametros['usuario'], 'rol' => 'socio');
+        $token = AutentificadorJWT::CrearToken($datos);
+        $payload = json_encode(array('jwt' => $token));
+        $response->getBody()->write(json_encode($payload));
+        return $response->withHeader('Content-Type', 'application/json');
+    })->add(new LoginMiddleware());
+});
+
+
 
 $app->put('[/]', function (Request $request, Response $response) {
     $parametros = $request->getParsedBody();

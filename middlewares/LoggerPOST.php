@@ -21,7 +21,7 @@ class LoggerMiddlewarePOST{
                 if ((Validaciones::validarStrings($parametros['nombre'])) && (Validaciones::validarStrings($parametros['apellido'])) && (Validaciones::validarStrings($parametros['rol']))) {
                     $fechaAlta = date('Y-m-d');
                     $empleadoController = new empleadoController();
-                    $result = $empleadoController->agregarEmpleado($parametros['nombre'], $parametros['apellido'], $parametros['rol'], $fechaAlta);
+                    $result = $empleadoController->agregarEmpleado($parametros['usuario'], $parametros['password'], $parametros['nombre'], $parametros['apellido'], $parametros['rol'], $fechaAlta);
                     $response = $handler->handle($request);
                 } else {
                     $response = new Response();
@@ -67,7 +67,7 @@ class LoggerMiddlewarePOST{
                 $fechaAlta = date('Y-m-d');
                 if (($handle = fopen("../files/CargarDesdeArchivo.csv", "r")) !== FALSE) {
                     if (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                        $result = $empleadoController->agregarEmpleado($data[0], $data[1], $data[2], $fechaAlta);
+                        $result = $empleadoController->agregarEmpleado($data[0], $data[1], $data[2], $data[3], $data[4],$fechaAlta);
                         $response = $handler->handle($request);
                     }
                     fclose($handle);
