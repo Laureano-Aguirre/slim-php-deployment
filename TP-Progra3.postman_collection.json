@@ -404,6 +404,151 @@
 					"response": []
 				},
 				{
+					"name": "PUT-ModificarPedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "ModificarPedido",
+									"type": "text"
+								},
+								{
+									"key": "idPedido",
+									"value": "DhaaP",
+									"type": "text"
+								},
+								{
+									"key": "productos",
+									"value": "coca, 2 empanadas",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "listo para servir",
+									"type": "text"
+								},
+								{
+									"key": "tiempoFinalizacion",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-ModificarProducto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "ModificarProducto",
+									"type": "text"
+								},
+								{
+									"key": "idProducto",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cantidad",
+									"value": "17",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-ModificarMesa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "ModificarMesa",
+									"type": "text"
+								},
+								{
+									"key": "idMesa",
+									"value": "10001",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "cerrada",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET-ListarEmpleados Copy",
 					"request": {
 						"method": "GET",
@@ -535,36 +680,21 @@
 					"response": []
 				},
 				{
-					"name": "PUT-ModificarPedido",
+					"name": "DELETE-BorrarProducto",
 					"request": {
-						"method": "PUT",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
 									"key": "action",
-									"value": "ModificarPedido",
+									"value": "BorrarProducto",
 									"type": "text"
 								},
 								{
-									"key": "idPedido",
-									"value": "DhaaP",
-									"type": "text"
-								},
-								{
-									"key": "productos",
-									"value": "coca, 2 empanadas",
-									"type": "text"
-								},
-								{
-									"key": "estado",
-									"value": "listo para servir",
-									"type": "text"
-								},
-								{
-									"key": "tiempoFinalizacion",
-									"value": "0",
+									"key": "idProducto",
+									"value": "3",
 									"type": "text"
 								},
 								{
@@ -584,6 +714,272 @@
 							"path": [
 								"app",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-BorrarMesa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "BorrarMesa",
+									"type": "text"
+								},
+								{
+									"key": "idMesa",
+									"value": "10001",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-BorrarPedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "BorrarPedido",
+									"type": "text"
+								},
+								{
+									"key": "idPedido",
+									"value": "quwBS",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sprint 3",
+			"item": [
+				{
+					"name": "POST-CargarDesdeCSV",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaEmpleadoCSV",
+									"type": "text"
+								},
+								{
+									"key": "rolUsuario",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-LeerDBYescribirCSV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:666/app/?action=DescargarCSV",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "DescargarCSV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AgregarEmpleados Copy 2",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0NjQxNzYsImV4cCI6MTcwMDUyNDE3NiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.6QU23hAisn7GEtGWN93k9deBO5G7NJet8k8ZtBZ5c7k\\",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "AltaEmpleado",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "jorge",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "jorge123",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Jorge",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Ramirez",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "cervecero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0NjQxNzYsImV4cCI6MTcwMDUyNDE3NiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.6QU23hAisn7GEtGWN93k9deBO5G7NJet8k8ZtBZ5c7k\\",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "lausi",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								"auth",
+								"login"
 							]
 						}
 					},
