@@ -10,22 +10,24 @@ class Empleado{
     public $apellido;
     public $rol;
     public $fechaAlta;
+    public $estado;
 
     public function agregarEmpleado(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into empleados (usuario,password,nombre,apellido,rol,fecha_Alta) values(:usuario, :password,:nombre, :apellido, :rol, '$this->fechaAlta')");
+        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into empleados (usuario,password,nombre,apellido,rol,fecha_Alta,estado) values(:usuario, :password,:nombre, :apellido, :rol, '$this->fechaAlta', :estado)");
         $consulta->bindValue(':usuario', $this->usuario, PDO::PARAM_STR);
         $consulta->bindValue(':password', $this->password, PDO::PARAM_STR);
         $consulta->bindValue(':nombre', $this->nombre, PDO::PARAM_STR);
         $consulta->bindValue(':apellido', $this->apellido, PDO::PARAM_STR);
         $consulta->bindValue(':rol', $this->rol, PDO::PARAM_STR);
+        $consulta->bindValue(':estado', $this->estado, PDO::PARAM_STR);
         $consulta->execute();
         return $objetoAccesoDato->retornarUltimoId();
     }
 
     public static function listarEmpleados(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_empleado as id, nombre, apellido, rol, fecha_Alta as fechaAlta FROM  empleados");
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_empleado as id, nombre, apellido, rol, fecha_Alta as fechaAlta FROM  empleados WHERE estado='activo'");
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "empleado");
     }
@@ -33,7 +35,6 @@ class Empleado{
     public function modificarEmpleado(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
         $consulta = $objetoAccesoDato->retornarConsulta("UPDATE empleados SET nombre=:nombre, apellido=:apellido, rol=:rol WHERE id_empleado=:id");
-
         $consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
         $consulta->bindValue(':nombre', $this->nombre, PDO::PARAM_STR);
         $consulta->bindValue(':apellido', $this->apellido, PDO::PARAM_STR);
@@ -43,7 +44,7 @@ class Empleado{
 
     public function borrarEmpleado(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("DELETE from empleados WHERE id_empleado=:id");
+        $consulta = $objetoAccesoDato->retornarConsulta("UPDATE empleados SET estado='inactivo' WHERE id_empleado=:id");
         $consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $consulta->execute();
     }

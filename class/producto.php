@@ -7,13 +7,15 @@ class ProductoRestaurante{
     public $tipo;
     public $descripcion;
     public $cantidad;
+    public $estado;
 
     public function agregarProducto(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into productos (tipo,descripcion,cantidad) values(:tipo, :descripcion, :cantidad)");
+        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into productos (tipo,descripcion,cantidad,estado) values(:tipo, :descripcion, :cantidad, :estado)");
         $consulta->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);
         $consulta->bindValue(':descripcion', $this->descripcion, PDO::PARAM_STR);
         $consulta->bindValue(':cantidad', $this->cantidad, PDO::PARAM_INT);
+        $consulta->bindValue(':estado', $this->estado, PDO::PARAM_STR);
         $consulta->execute();
         return $objetoAccesoDato->retornarUltimoId();
     }
@@ -35,7 +37,7 @@ class ProductoRestaurante{
 
     public function borrarProducto(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("DELETE from productos WHERE id_producto=:idProducto");
+        $consulta = $objetoAccesoDato->retornarConsulta("UPDATE productos SET estado='inactivo' WHERE id_producto=:idProducto");
         $consulta->bindValue(':idProducto', $this->id, PDO::PARAM_INT);
         return $consulta->execute();
     }

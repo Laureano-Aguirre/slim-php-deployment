@@ -12,6 +12,7 @@ class empleadoController{
         $empleado->apellido = $apellido;
         $empleado->rol = $rol;
         $empleado->fechaAlta = $fechaAlta;
+        $empleado->estado='activo';
         return $empleado->agregarEmpleado();
     }
 

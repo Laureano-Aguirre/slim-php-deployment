@@ -9,6 +9,7 @@ class productoController{
         $producto->tipo = $tipo;
         $producto->descripcion = $descripcion;
         $producto->cantidad = $cantidad;
+        $producto->estado = 'activo';
         return $producto->agregarProducto();
     }
 
