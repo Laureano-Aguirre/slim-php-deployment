@@ -123,6 +123,16 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNjA4NDUsImV4cCI6MTcwMTEyMDg0NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.eGwEsmNIBk148fg9aXY8w5Obgq4AQAPIR3m21viMpzM\\",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -140,6 +150,16 @@
 									"type": "text"
 								},
 								{
+									"key": "usuario",
+									"value": "alan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "alan123",
+									"type": "text"
+								},
+								{
 									"key": "nombre",
 									"value": "Alan",
 									"type": "text"
@@ -152,11 +172,6 @@
 								{
 									"key": "rol",
 									"value": "cocinero",
-									"type": "text"
-								},
-								{
-									"key": "rolUsuario",
-									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -179,6 +194,16 @@
 				{
 					"name": "POST-AltaProductos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNjA4NDUsImV4cCI6MTcwMTEyMDg0NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.eGwEsmNIBk148fg9aXY8w5Obgq4AQAPIR3m21viMpzM\\",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -201,12 +226,7 @@
 								},
 								{
 									"key": "cantidad",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "rolUsuario",
-									"value": "socio",
+									"value": "5",
 									"type": "text"
 								}
 							]
@@ -228,6 +248,16 @@
 				{
 					"name": "POST-AltaMesas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNjA4NDUsImV4cCI6MTcwMTEyMDg0NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.eGwEsmNIBk148fg9aXY8w5Obgq4AQAPIR3m21viMpzM\\",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -262,11 +292,6 @@
 									"key": "estado",
 									"value": "con cliente comiendo",
 									"type": "text"
-								},
-								{
-									"key": "rolUsuario",
-									"value": "socio",
-									"type": "text"
 								}
 							]
 						},
@@ -287,6 +312,16 @@
 				{
 					"name": "POST-AltaPedidos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNjA4NDUsImV4cCI6MTcwMTEyMDg0NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.eGwEsmNIBk148fg9aXY8w5Obgq4AQAPIR3m21viMpzM\\",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -320,11 +355,6 @@
 								{
 									"key": "tiempoFinalizacion",
 									"value": "25",
-									"type": "text"
-								},
-								{
-									"key": "rolUsuario",
-									"value": "socio",
 									"type": "text"
 								}
 							]
@@ -807,6 +837,16 @@
 				{
 					"name": "POST-CargarDesdeCSV",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0NjQxNzYsImV4cCI6MTcwMDUyNDE3NiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.6QU23hAisn7GEtGWN93k9deBO5G7NJet8k8ZtBZ5c7k\\",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -815,11 +855,6 @@
 								{
 									"key": "action",
 									"value": "AltaEmpleadoCSV",
-									"type": "text"
-								},
-								{
-									"key": "rolUsuario",
-									"value": "socio",
 									"type": "text"
 								}
 							]

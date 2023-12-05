@@ -36,11 +36,17 @@ include_once '../controllers/productoController.php';
 include_once '../controllers/pedidoController.php';
 include_once '../controllers/mesaController.php';
 include_once '../controllers/AuthenticatorController.php';
-
+include_once '../controllers/productoPedidoController.php';
 
 
 // Routes
 $app->get('[/]', function (Request $request, Response $response) {
+    $action = $_GET['action'];
+    switch($action){
+        case 'ListarPendientes':
+            $result = ['message' => 'Listando, aguarde...'];
+            break;
+    }
     $result = ['message' => 'Listando, aguarde...'];
     $response->getBody()->write(json_encode($result)); 
     return $response->withHeader('Content-Type', 'application/json');
@@ -65,8 +71,16 @@ $app->post('[/]', function (Request $request, Response $response) {
             $result = ['message' => 'Exito al dar de alta el pedido!'];
             $response->getBody()->write(json_encode($result));
             break;
+        case 'AltaProductoPedido':
+            $result = ['message' => 'Exito al agregar el producto al pedido!'];
+            $response->getBody()->write(json_encode($result));
+            break;
         case 'AltaEmpleadoCSV':
             $result = ['message' => 'Exito al dar de alta al empleado a traves del archivo.csv!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'HacerEncuesta':
+            $result = ['message' => 'Muchas gracias por realizar la encuesta!'];
             $response->getBody()->write(json_encode($result));
             break;
         default:
@@ -80,15 +94,13 @@ $app->post('[/]', function (Request $request, Response $response) {
 $app->group('/auth', function (RouteCollectorProxy $group) {
     $group->post('[/login]', function (Request $request, Response $response) {
         $parametros = $request->getParsedBody();
-        $datos = array('usuario' => $parametros['usuario'], 'rol' => 'socio');
+        $datos = array('usuario' => $parametros['usuario'], 'rol' => $parametros['rol']);
         $token = AutentificadorJWT::CrearToken($datos);
-        $payload = json_encode(array('jwt' => $token));
+        $payload = array('jwt' => $token);
         $response->getBody()->write(json_encode($payload));
         return $response->withHeader('Content-Type', 'application/json');
     })->add(new LoginMiddleware());
 });
-
-
 
 $app->put('[/]', function (Request $request, Response $response) {
     $parametros = $request->getParsedBody();
@@ -108,6 +120,26 @@ $app->put('[/]', function (Request $request, Response $response) {
             break;
         case 'ModificarPedido':
             $result = ['message' => 'Exito al modificar el pedido!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'PrepararProductoPedido':
+            $result = ['message' => 'Manos a la obra, a preparar el producto!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'TerminarProductoPedido':
+            $result = ['message' => 'Rinnnnnng, producto listo para servir!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'EntregarPedido':
+            $result = ['message' => 'Aca esta su pedido, que lo disfruten!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'CobrarPedido':
+            $result = ['message' => 'Su pago se efectuo con exito!'];
+            $response->getBody()->write(json_encode($result));
+            break;
+        case 'CerrarMesa':
+            $result = ['message' => 'Mesa cerrada, esperemos que lo hayan disfrutado, vuelvan pronto!'];
             $response->getBody()->write(json_encode($result));
             break;
         default:

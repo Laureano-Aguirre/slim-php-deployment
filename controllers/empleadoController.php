@@ -4,7 +4,7 @@ include_once '../class/empleado.php';
 
 class empleadoController{
 
-    public function agregarEmpleado($usuario=null, $password=null,$nombre, $apellido, $rol, $fechaAlta){
+    public function agregarEmpleado($nombre, $apellido, $rol, $fechaAlta, $usuario=null, $password=null){
         $empleado = new Empleado();
         $empleado->usuario = $usuario;
         $empleado->password = $password;
@@ -35,6 +35,7 @@ class empleadoController{
         return $empleado->borrarEmpleado();
     }
 
+    
     
 }
 

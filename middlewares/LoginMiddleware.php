@@ -4,6 +4,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Response;
 
 include_once '../controllers/AuthenticatorController.php';
+include_once '../controllers/logController.php';
 
 class LoginMiddleware{
     public function __invoke(Request $request, RequestHandler $handler): Response
@@ -14,7 +15,9 @@ class LoginMiddleware{
         if ($parametros['usuario'] !== null && $parametros['password'] !== null) {
             $retorno = $authenticatorController->autenticarUsuario($parametros['usuario'], $parametros['password']);
             if ($retorno !== false) {
-                
+                $logController = new logController();
+                $fechaLog = date('Y-m-d H:i:s');
+                $logController->agregarLog($parametros['usuario'], 'login', $fechaLog);
                 $response = $handler->handle($request);
             } else {
                 $response = new Response();

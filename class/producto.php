@@ -8,13 +8,15 @@ class ProductoRestaurante{
     public $descripcion;
     public $cantidad;
     public $estado;
+    public $precio;
 
     public function agregarProducto(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into productos (tipo,descripcion,cantidad,estado) values(:tipo, :descripcion, :cantidad, :estado)");
+        $consulta = $objetoAccesoDato->retornarConsulta("INSERT into productos (tipo,descripcion,cantidad,precio,estado) values(:tipo, :descripcion, :cantidad, :precio,:estado)");
         $consulta->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);
         $consulta->bindValue(':descripcion', $this->descripcion, PDO::PARAM_STR);
         $consulta->bindValue(':cantidad', $this->cantidad, PDO::PARAM_INT);
+        $consulta->bindValue(':precio', $this->precio, PDO::PARAM_INT);
         $consulta->bindValue(':estado', $this->estado, PDO::PARAM_STR);
         $consulta->execute();
         return $objetoAccesoDato->retornarUltimoId();
