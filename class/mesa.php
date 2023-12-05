@@ -7,7 +7,6 @@ class Mesa{
     public $codigoMesa;
     public $idPedido;
     public $idMozo;
-    public $idEncuesta;
     public $nombreCliente;
     public $estado;
 
