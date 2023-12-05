@@ -128,7 +128,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEwNjA4NDUsImV4cCI6MTcwMTEyMDg0NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.eGwEsmNIBk148fg9aXY8w5Obgq4AQAPIR3m21viMpzM\\",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE4MTA0NzAsImV4cCI6MTcwMTg3MDQ3MCwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.nB_7x3q5MfJfX60RXQP4C0BMGLpX5TKTLz6V4gcg6Pw",
 									"type": "string"
 								}
 							]
@@ -151,22 +151,22 @@
 								},
 								{
 									"key": "usuario",
-									"value": "alan",
+									"value": "carlos",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "alan123",
+									"value": "carlos123",
 									"type": "text"
 								},
 								{
 									"key": "nombre",
-									"value": "Alan",
+									"value": "Carlos",
 									"type": "text"
 								},
 								{
 									"key": "apellido",
-									"value": "Gomez",
+									"value": "Messi",
 									"type": "text"
 								},
 								{
@@ -975,14 +975,14 @@
 					"response": []
 				},
 				{
-					"name": "POST-Login",
+					"name": "POST-Login cervecero",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA0NjQxNzYsImV4cCI6MTcwMDUyNDE3NiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXNpIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.6QU23hAisn7GEtGWN93k9deBO5G7NJet8k8ZtBZ5c7k\\",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -994,12 +994,17 @@
 							"formdata": [
 								{
 									"key": "usuario",
-									"value": "lausi",
+									"value": "jorge",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "1234",
+									"value": "jorge123",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "cervecero",
 									"type": "text"
 								}
 							]
@@ -1019,6 +1024,1639 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "POST-Login cervecero mozo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "juan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "juan123",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "mozo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Login cocinero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "alan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "alan123",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "cocinero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Login bartender",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "paula",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "paula123",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "bartender",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Login socio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "laureano",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "laureano123",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/app/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"app",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Correccion-Pasos",
+			"item": [
+				{
+					"name": "Paso-1",
+					"item": [
+						{
+							"name": "AltaPedido",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "AltaPedidos",
+											"type": "text"
+										},
+										{
+											"key": "nombreCliente",
+											"value": "Hernesto",
+											"type": "text"
+										},
+										{
+											"key": "idMozo",
+											"value": "35",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "pendiente",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AltaMesa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE4MDc3MDEsImV4cCI6MTcwMTg2NzcwMSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.BRxhcuh8Hm6sZFyKv8VmjBswRDws5rOMNL21fJX5z6s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "AltaMesas",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										},
+										{
+											"key": "idMozo",
+											"value": "35",
+											"type": "text"
+										},
+										{
+											"key": "nombreCliente",
+											"value": "Adolfo",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "con cliente esperando el pedido",
+											"type": "text"
+										},
+										{
+											"key": "archivo",
+											"type": "file",
+											"src": "/C:/xampp/htdocs/slim-php-deployment/imagen.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AltaProductoPedido",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "AltaProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProducto",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "descripcionProducto",
+											"value": "milanesa a caballo",
+											"type": "text"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "Zc8Hn",
+											"type": "text"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "38",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AltaProductoPedido hamburguesa garbanzo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "AltaProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProducto",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "descripcionProducto",
+											"value": "2 hamburguesas garbanzo",
+											"type": "text"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "38",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AltaProductoPedido corona",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "AltaProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProducto",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "descripcionProducto",
+											"value": "1 corona",
+											"type": "text"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "34",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AltaProductoPedido daikiri",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "AltaProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProducto",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "descripcionProducto",
+											"value": "Daikiri",
+											"type": "text"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "39",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-3",
+					"item": [
+						{
+							"name": "ListarPendientes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA0NzIsImV4cCI6MTcwMTgxMDQ3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6InBhdWxhIiwicm9sIjoiYmFydGVuZGVyIn0sImFwcCI6IlRlc3QgSldUIn0.1df3D7kCZpRueDbdkX3tjC3V__J-m5Y92rlYTf5x2uE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarPendientes&idEmpleado=39&estado=pendiente",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarPendientes"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "39"
+										},
+										{
+											"key": "estado",
+											"value": "pendiente"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PrepararProductoPedidoMilanesa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "PrepararProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "13",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PrepararProductoPedidoHamburguesa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "PrepararProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "14",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PrepararProductoPedido corona",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "PrepararProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "15",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PrepararProductoPedido daikiri",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "PrepararProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "16",
+											"type": "text"
+										},
+										{
+											"key": "tiempoFinalizacion",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-4",
+					"item": [
+						{
+							"name": "ConsultarPedido",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ConsultarPedido&idPedido=cZqXJ&codigoMesa=10007",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ConsultarPedido"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-5",
+					"item": [
+						{
+							"name": "ListarPedidos",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA2MDIsImV4cCI6MTcwMTgxMDYwMiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.ePPTNP14umxTkTJ6zk4mI9KTg7V79voBcySyto2bQtE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarPedidos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarPedidos"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-6",
+					"item": [
+						{
+							"name": "ListarPendientes cocinero",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarPendientes&estado=en preparacion&idEmpleado=38",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarPendientes"
+										},
+										{
+											"key": "estado",
+											"value": "en preparacion"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "38"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ListarPendientes cervecero",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAxMTEsImV4cCI6MTcwMTgxMDExMSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImpvcmdlIiwicm9sIjoiY2VydmVjZXJvIn0sImFwcCI6IlRlc3QgSldUIn0.eLAyjbMRf57xtHT_T94pIUBEE6jluZX-on4X0tKgh6w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarPendientes&idEmpleado=34&estado=en preparacion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarPendientes"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "34"
+										},
+										{
+											"key": "estado",
+											"value": "en preparacion"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ListarPendientes bartender",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA0NzIsImV4cCI6MTcwMTgxMDQ3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6InBhdWxhIiwicm9sIjoiYmFydGVuZGVyIn0sImFwcCI6IlRlc3QgSldUIn0.1df3D7kCZpRueDbdkX3tjC3V__J-m5Y92rlYTf5x2uE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarPendientes&idEmpleado=39&estado=en preparacion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarPendientes"
+										},
+										{
+											"key": "idEmpleado",
+											"value": "39"
+										},
+										{
+											"key": "estado",
+											"value": "en preparacion"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TerminarProductoPedidoMila",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "TerminarProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "13",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TerminarProductoPedidoHambur",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAzNzIsImV4cCI6MTcwMTgxMDM3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImFsYW4iLCJyb2wiOiJjb2NpbmVybyJ9LCJhcHAiOiJUZXN0IEpXVCJ9.OK5EQaTCq_D_phg963sA33fhnUOOBHz_QjawlJN9_wI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "TerminarProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "14",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TerminarProductoPedidoCorona",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTAxMTEsImV4cCI6MTcwMTgxMDExMSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImpvcmdlIiwicm9sIjoiY2VydmVjZXJvIn0sImFwcCI6IlRlc3QgSldUIn0.eLAyjbMRf57xtHT_T94pIUBEE6jluZX-on4X0tKgh6w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "TerminarProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "15",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TerminarProductoPedidoDaikiri",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA0NzIsImV4cCI6MTcwMTgxMDQ3MiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6InBhdWxhIiwicm9sIjoiYmFydGVuZGVyIn0sImFwcCI6IlRlc3QgSldUIn0.1df3D7kCZpRueDbdkX3tjC3V__J-m5Y92rlYTf5x2uE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "TerminarProductoPedido",
+											"type": "text"
+										},
+										{
+											"key": "idProductoPedido",
+											"value": "16",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-7",
+					"item": [
+						{
+							"name": "EntregarPedido",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "EntregarPedido",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-8",
+					"item": [
+						{
+							"name": "ListarMesas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA2MDIsImV4cCI6MTcwMTgxMDYwMiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.ePPTNP14umxTkTJ6zk4mI9KTg7V79voBcySyto2bQtE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarMesas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarMesas"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-9",
+					"item": [
+						{
+							"name": "CobrarPedido",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NDcxNTUsImV4cCI6MTcwMTgwNzE1NSwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6Imp1YW4iLCJyb2wiOiJtb3pvIn0sImFwcCI6IlRlc3QgSldUIn0.molra9XTFCIjkqChW8TPvpTaVcUtTAVk-w6IUPkSTGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "CobrarPedido",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										},
+										{
+											"key": "cuenta",
+											"value": "8000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-10",
+					"item": [
+						{
+							"name": "CerrarMesa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA2MDIsImV4cCI6MTcwMTgxMDYwMiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.ePPTNP14umxTkTJ6zk4mI9KTg7V79voBcySyto2bQtE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "CerrarMesa",
+											"type": "text"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-11",
+					"item": [
+						{
+							"name": "HacerEncuesta",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA2MDIsImV4cCI6MTcwMTgxMDYwMiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.ePPTNP14umxTkTJ6zk4mI9KTg7V79voBcySyto2bQtE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "action",
+											"value": "HacerEncuesta",
+											"type": "text"
+										},
+										{
+											"key": "codigoMesa",
+											"value": "10007",
+											"type": "text"
+										},
+										{
+											"key": "idPedido",
+											"value": "cZqXJ",
+											"type": "text"
+										},
+										{
+											"key": "puntuacionMesa",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "puntuacionRestaurante",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "puntuacionMozo",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "puntuacionCocinero",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "comentario",
+											"value": "baños chiquitos",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:666/app/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-12",
+					"item": [
+						{
+							"name": "ListarMejoresComentarios",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA2MDIsImV4cCI6MTcwMTgxMDYwMiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.ePPTNP14umxTkTJ6zk4mI9KTg7V79voBcySyto2bQtE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarMejoresComentarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarMejoresComentarios"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paso-13",
+					"item": [
+						{
+							"name": "ListarMesaMasUsada",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE3NTA2MDIsImV4cCI6MTcwMTgxMDYwMiwiYXVkIjoiZDNkYWY3MjY1ZjUwMDZjYzg2OGJmODdiN2MxNzZmZGNkZGVjMjcxMyIsImRhdGEiOnsidXN1YXJpbyI6ImxhdXJlYW5vIiwicm9sIjoic29jaW8ifSwiYXBwIjoiVGVzdCBKV1QifQ.ePPTNP14umxTkTJ6zk4mI9KTg7V79voBcySyto2bQtE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:666/app/?action=ListarMesaMasUsada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "666",
+									"path": [
+										"app",
+										""
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ListarMesaMasUsada"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
