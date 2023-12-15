@@ -27,7 +27,7 @@ class Empleado{
 
     public static function listarEmpleados(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_empleado as id, nombre, apellido, rol, fecha_Alta as fechaAlta FROM  empleados WHERE estado='activo'");
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_empleado as id, usuario,password,nombre, apellido, rol, fecha_Alta as fechaAlta, estado FROM  empleados WHERE estado='activo'");
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "empleado");
     }

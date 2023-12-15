@@ -152,9 +152,10 @@ class LoggerMiddlewareGET{
             case 'DescargarCSV':
                 $empleadoController = new empleadoController();
                 $result = $empleadoController->listarEmpleados();
-                if (($handle = fopen("../files/LeerDesdeArchivo.csv", "w")) !== FALSE) {
+                if (($handle = fopen("../app/LeerDesdeArchivo.csv", "w")) !== FALSE) {
                     foreach ($result as $empleado) {
-                        $row = array($empleado->nombre, $empleado->apellido, $empleado->rol);
+                        $row = array($empleado->usuario,$empleado->password,$empleado->nombre, $empleado->apellido, $empleado->rol, $empleado->fechaAlta);
+                        //var_dump($row);
                         fputcsv($handle, $row);
                         $logController = new logController();
                         $fechaLog = date('Y-m-d H:i:s');

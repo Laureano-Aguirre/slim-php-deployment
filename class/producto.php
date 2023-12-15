@@ -24,7 +24,7 @@ class ProductoRestaurante{
 
     public static function listarProductos(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_producto as id, tipo, descripcion FROM  productos");
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_producto as id, tipo, descripcion, cantidad, estado, precio FROM  productos");
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "productoRestaurante");
     }

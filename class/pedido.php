@@ -26,7 +26,7 @@ class Pedido{
 
     public static function listarPedidos(){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_pedido as idPedido ,nombre_cliente as nombreCliente, id_empleado as idEmpleado, codigo_mesa as codigoMesa, estado, tiempo_finalizacion as tiempoFinalizacion FROM  pedidos");
+        $consulta = $objetoAccesoDato->retornarConsulta("SELECT id_pedido as idPedido ,nombre_cliente as nombreCliente, id_empleado as idEmpleado, codigo_mesa as codigoMesa, estado, tiempo_finalizacion as tiempoFinalizacion, cuenta FROM  pedidos");
         $consulta->execute();
         return $consulta->fetchAll(PDO::FETCH_CLASS, "pedido");
     }
